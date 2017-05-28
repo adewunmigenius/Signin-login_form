@@ -1,0 +1,18 @@
+body{
+	margin-top: 250px;
+	font-family: "Raleway", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	background: #0096ff;
+}
+/*.wrap{
+	margin:0 70px;
+	background: #87cefa;
+}
+.container{
+	background: #87cefa;
+}
+*/
+label{
+	color: red;
+	font-size:120%;
+
+}
