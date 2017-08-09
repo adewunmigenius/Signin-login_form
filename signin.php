@@ -5,7 +5,11 @@ include 'db.php';
 $uid = $_POST['uid'];
 $pwd = $_POST['pwd'];
 
-$sql ="SELECT*FROM user WHERE uid='$uid' AND pwd ='$pwd'";
+$salt1 = "qm&h*";
+$salt2 = "pg!@";
+$prtpwd = hash('ripemd128', "$salt1$pwd$salt2");
+
+$sql ="SELECT*FROM user WHERE uid='$uid' AND pwd ='$prtpwd'";
 $result = $conn->query($sql);
  if(!$row = $result->fetch_assoc()){
  	echo "Your username or password is incorrect!";
