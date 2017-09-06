@@ -7,6 +7,9 @@ include 'db.php';
 $uid = $_POST['uid'];
 $pwd = $_POST['pwd'];
 
+$uid = mysqli_real_escape_string($uid);
+$pwd = mysqli_real_escape_string($pwd);
+
 $salt1 = "qm&h*";
 $salt2 = "pg!@";
 $prtpwd = hash('ripemd128', "$salt1$pwd$salt2");
